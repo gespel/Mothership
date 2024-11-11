@@ -7,7 +7,7 @@ void setup() {
   Serial.begin(115200);
   pinMode(2, OUTPUT);
   digitalWrite(2, HIGH);
-  s.tokenize("sinesynth(220); sinesynth(440);");
+  s.tokenize("sinesynth(220); sinesynth(440); if x 2");
 }
 
 void loop() {
