@@ -4,7 +4,7 @@
 
 
 Tokenizer t;
-Slang s(48000, t.tokenize("sinesynth(220); sinesynth(440); sinesynth(7000);"));
+Slang s(48000, t.tokenize("sinesynth(220); sinesynth(440); sinesynth(7000); sawtoothsynth(200);"));
 
 void setup() {
   Serial.begin(115200);
@@ -15,9 +15,16 @@ void setup() {
 }
 
 void loop() {
-  s.printTokens();
-  for(auto s : s.getSineSynths()) {
-    Serial.println(s->getSample());
+  //s.printTokens();
+  for(auto sy : s.getSineSynths()) {
+    //Serial.println(sy->getSample());
   }
+  String pre_sine = "Number of SineSynths: ";
+  String pre_saw = " Number of SawtoothSynths: ";
+  Serial.println(pre_sine + s.getSineSynths().size() + pre_saw + s.getSawtoothSynths().size());
   sleep(3);
+}
+
+void printDebug() {
+  
 }
