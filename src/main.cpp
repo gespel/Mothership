@@ -4,27 +4,20 @@
 
 
 Tokenizer t;
-Slang s(48000, t.tokenize("sinesynth(220); sinesynth(440); sinesynth(7000); sawtoothsynth(200);"));
+Slang s(48000, t.tokenize("sinesynth(220); sinesynth(440); fn test { sten lina } sinesynth(7000); sawtoothsynth(200); fn asd { x y } fn asda { x y }"));
 
 void setup() {
     Serial.begin(115200);
     pinMode(2, OUTPUT);
     digitalWrite(2, HIGH);
-    s.interpret();
-
 }
 
 void loop() {
-    //s.printTokens();
-    for(auto sy : s.getSineSynths()) {
-        //Serial.println(sy->getSample());
-    }
-  
+    s.interpret();
+    s.printDebug();
+    
     sleep(3);
+    s.clear();
 }
 
-void printDebug() {
-    String pre_sine = "Number of SineSynths: ";
-    String pre_saw = " Number of SawtoothSynths: ";
-    Serial.println(pre_sine + s.getSineSynths().size() + pre_saw + s.getSawtoothSynths().size());
-}
+
