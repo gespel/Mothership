@@ -4,7 +4,7 @@
 
 
 Tokenizer t;
-Slang s(48000, t.tokenize("sinesynth(220); sinesynth(440); fn test { sten lina } sinesynth(7000); sawtoothsynth(200); fn asd { x y } fn asda { x y }"));
+Slang s(48000);
 
 void setup() {
     Serial.begin(115200);
@@ -13,7 +13,7 @@ void setup() {
 }
 
 void loop() {
-    s.interpret();
+    s.interpret(t.tokenize("sinesynth(220); sinesynth(440); fn test { sawtoothsynth(123); } test;"));
     s.printDebug();
     
     sleep(3);
