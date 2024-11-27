@@ -13,7 +13,7 @@ void setup() {
 }
 
 void loop() {
-    s.interpret(t.tokenize("sinesynth(220); sinesynth(440); fn test { sawtoothsynth(123); } test;"));
+    s.interpret(t.tokenize("sinesynth(220); sinesynth(440); fn test { sawtoothsynth(123); } test; test; test;"));
     s.printDebug();
     
     sleep(3);
