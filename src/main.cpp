@@ -1,10 +1,10 @@
 #include <Arduino.h>
-#include "slang/slang.h"
-#include "slang/tokenizer.h"
+#include "microslang/microslang.h"
+#include "microslang/tokenizer.h"
 
 
 Tokenizer t;
-Slang s(48000);
+MicroSlang s(48000);
 
 void setup() {
     Serial.begin(115200);
