@@ -82,7 +82,7 @@ void loop() {
         oled.setCursor(0,0);
         oled.print(currentProgramm);
         oled.setCursor(7,0);
-        oled.print("Made by Gouod Records");
+        oled.print("Made by Sten Heimbrodt");
         oled.update();
     }
 
