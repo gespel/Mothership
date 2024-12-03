@@ -57,7 +57,7 @@ void setup() {
     digitalWrite(2, HIGH);
     SerialBT.begin("The Mothership");
     oled.println("MOTHERSHIP");
-    oled.println("Made by Gouod Labs");
+    oled.println("Made by Phi Labs");
     oled.update();
 }
 
@@ -81,8 +81,9 @@ void loop() {
         oled.clear();
         oled.setCursor(0,0);
         oled.print(currentProgramm);
-        oled.setCursor(7,0);
-        oled.print("Made by Sten Heimbrodt");
+        oled.setCursor(0,6);
+        oled.println("Made by Phi Labs"); 
+        oled.println("Sten Heimbrodt");
         oled.update();
     }
 
