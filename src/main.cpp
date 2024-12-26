@@ -37,13 +37,10 @@ Tokenizer t;
 MicroSlang s(48000);
 BluetoothSerial SerialBT;
 String currentProgramm =
-    "sinesynth(220); "
-    "sinesynth(440); "
     "fn test { "
-        "sawtoothsynth(123); "
+        "sawtoothsynth(55); "
+        "sawtoothsynth(110); "
     "} "
-    "test; "
-    "test; "
     "test; ";
 GyverOLED<SSH1106_128x64> oled;
 int sampleRate = 48000;
@@ -58,6 +55,7 @@ void setup() {
     SerialBT.begin("The Mothership");
     oled.println("MOTHERSHIP");
     oled.println("Made by Phi Labs");
+    s.interpret(t.tokenize(currentProgramm));
     oled.update();
 }
 
