@@ -1,7 +1,7 @@
 #include <Arduino.h>
-#include "microslang/microslang.h"
-#include "microslang/tokenizer.h"
-#include "bluetooth.h"
+//#include "microslang/microslang.h"
+//#include "microslang/tokenizer.h"
+//#include "bluetooth.h"
 #include <GyverOLED.h>
 #include <driver/i2s.h>
 
@@ -33,9 +33,9 @@ void setup_i2n(int sampleRate, int bitDepth, int i2sChannel) {
 //Bluetooth bt;
 const int BUFSIZE = 2048;
 uint16_t audioBuffer[BUFSIZE];
-Tokenizer t;
-MicroSlang s(48000);
-BluetoothSerial SerialBT;
+//Tokenizer t;
+//MicroSlang s(48000);
+//BluetoothSerial SerialBT;
 String currentProgramm =
     "fn test { "
         "sawtoothsynth(55); "
@@ -51,18 +51,28 @@ void setup() {
     setup_i2n(sampleRate, 16, 0);
     oled.autoPrintln(true);
     pinMode(2, OUTPUT);
+    pinMode(33, INPUT);
+    pinMode(32, INPUT);
+    pinMode(35, INPUT);
+    pinMode(34, INPUT);
     digitalWrite(2, HIGH);
-    SerialBT.begin("The Mothership");
+    //SerialBT.begin("The Mothership");
     oled.println("MOTHERSHIP");
     oled.println("Made by Phi Labs");
-    s.interpret(t.tokenize(currentProgramm));
+    //s.interpret(t.tokenize(currentProgramm));
     oled.update();
 }
 
 
 void loop() {
+    Serial.println(digitalRead(33));
+    Serial.println(digitalRead(32));
+    Serial.println(digitalRead(35));
+    Serial.println(digitalRead(34));
+    Serial.println("=======================");
+    usleep(100000);
     //s.printDebug();
-    if(SerialBT.available()) {
+    /*if(SerialBT.available()) {
         Serial.println("============= Detected new Slang script! =============");
         String rcv = "";
         rcv = rcv + (char)SerialBT.read();
@@ -101,9 +111,9 @@ void loop() {
 
         
         
-    }
+    }*/
     
-    i2s_write((i2s_port_t)0, audioBuffer, sizeof(audioBuffer), &bytes_written, portMAX_DELAY);
+    //i2s_write((i2s_port_t)0, audioBuffer, sizeof(audioBuffer), &bytes_written, portMAX_DELAY);
 }
 
 
