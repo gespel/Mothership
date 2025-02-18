@@ -1,7 +1,8 @@
 #include <Arduino.h>
-//#include "microslang/microslang.h"
-//#include "microslang/tokenizer.h"
-//#include "bluetooth.h"
+#include "microslang/microslang.h"
+#include "microslang/tokenizer.h"
+#include "bluetooth.h"
+#include "mothership.h"
 #include <GyverOLED.h>
 #include <driver/i2s.h>
 
@@ -44,6 +45,7 @@ String currentProgramm =
     "test; ";
 GyverOLED<SSH1106_128x64> oled;
 int sampleRate = 48000;
+Mothership m;
 
 void setup() {
     Serial.begin(115200);
@@ -65,6 +67,7 @@ void setup() {
 
 
 void loop() {
+    m.testfunc();
     Serial.println(digitalRead(33));
     Serial.println(digitalRead(32));
     Serial.println(digitalRead(35));
