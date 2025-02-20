@@ -2,4 +2,8 @@
 
 MOscilator::MOscilator() {
     
-} 
+}
+
+void MOscilator::renderInterface() {
+    
+}

@@ -1,8 +1,8 @@
 #include "../menu.h"
 
-class MOscilator : Menu {
+class MOscilator : public Menu {
 public:
     MOscilator();
-
+    void renderInterface();
 private:
 };

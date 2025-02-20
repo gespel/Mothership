@@ -45,7 +45,7 @@ String currentProgramm =
     "test; ";
 GyverOLED<SSH1106_128x64> oled;
 int sampleRate = 48000;
-Mothership m;
+Mothership m(&oled);
 
 void setup() {
     Serial.begin(115200);
@@ -74,6 +74,7 @@ void loop() {
     Serial.println("=======================");
     usleep(100000);
     //s.printDebug();
+    m.render();
     /*if(SerialBT.available()) {
         Serial.println("============= Detected new Slang script! =============");
         String rcv = "";
