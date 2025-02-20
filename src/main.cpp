@@ -67,7 +67,6 @@ void setup() {
 
 
 void loop() {
-    m.testfunc();
     Serial.println(digitalRead(33));
     Serial.println(digitalRead(32));
     Serial.println(digitalRead(35));

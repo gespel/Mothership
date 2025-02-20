@@ -1,9 +1,6 @@
 #include "mothership.h"
 
 Mothership::Mothership() {
-    
-}
-
-void Mothership::testfunc() {
+    Menu* mm = new MainMenu();
 
 }
