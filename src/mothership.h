@@ -5,6 +5,8 @@
 #include <stdlib.h>
 #include <GyverOLED.h>
 
+class Menu;
+
 class Mothership {
 public:
     Mothership(GyverOLED<SSH1106_128x64>* oled);

@@ -1,7 +1,7 @@
 #include "mothership.h"
 
 Mothership::Mothership(GyverOLED<SSH1106_128x64>* oled) {
-    Menu* mm = new MainMenu(oled, this);
+    Menu* mm = new MainMenu(oled);
     Menu* mosc = new MOscilator();
     this->menues[0] = mm;
     this->menues[1] = mosc;
