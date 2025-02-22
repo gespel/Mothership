@@ -1,7 +1,7 @@
 #include <Arduino.h>
 #include "microslang/microslang.h"
 #include "microslang/tokenizer.h"
-#include "bluetooth.h"
+//#include "bluetooth.h"
 #include "mothership.h"
 #include <GyverOLED.h>
 #include <driver/i2s.h>
@@ -53,28 +53,31 @@ void setup() {
     setup_i2n(sampleRate, 16, 0);
     oled.autoPrintln(true);
     pinMode(2, OUTPUT);
-    pinMode(33, INPUT);
-    pinMode(32, INPUT);
-    pinMode(35, INPUT);
-    pinMode(34, INPUT);
+    //pinMode(33, INPUT);
+    //pinMode(32, INPUT);
+    //pinMode(35, INPUT);
+    //pinMode(34, INPUT);
     digitalWrite(2, HIGH);
     //SerialBT.begin("The Mothership");
     oled.println("MOTHERSHIP");
     oled.println("Made by Phi Labs");
     //s.interpret(t.tokenize(currentProgramm));
     oled.update();
+    usleep(5000000);
 }
 
 
 void loop() {
-    Serial.println(digitalRead(33));
+    /*Serial.println(digitalRead(33));
     Serial.println(digitalRead(32));
     Serial.println(digitalRead(35));
     Serial.println(digitalRead(34));
     Serial.println("=======================");
-    usleep(100000);
+    usleep(100000);*/
     //s.printDebug();
     m.render();
+    usleep(100000);
+    
     /*if(SerialBT.available()) {
         Serial.println("============= Detected new Slang script! =============");
         String rcv = "";

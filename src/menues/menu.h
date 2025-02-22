@@ -1,4 +1,6 @@
 #pragma once
+#include <GyverOLED.h>
+
 
 class Menu {
 public:
