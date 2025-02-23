@@ -12,6 +12,8 @@ public:
     Mothership(GyverOLED<SSH1106_128x64>* oled);
     void render();
     void setBrightness(int nb);
+    void setMenu(int menuNr);
+    void readInputs();
 private:
     int brightness = 255;
     Menu* currentMenu;

@@ -48,6 +48,7 @@ int sampleRate = 48000;
 Mothership m(&oled);
 
 void setup() {
+    m.setMenu(0);
     Serial.begin(115200);
     oled.init();
     setup_i2n(sampleRate, 16, 0);
@@ -68,8 +69,24 @@ void setup() {
 
 
 void loop() {
-    /*Serial.println(digitalRead(33));
-    Serial.println(digitalRead(32));
+    if(digitalRead(33) == 1) {
+        //this->currentMenu->northButtonPushed();
+        Serial.println("North");
+    }
+    if(digitalRead(32) == 1) {
+        //this->currentMenu->southButtonPushed();
+        Serial.println("South");
+    }
+    if(digitalRead(35) == 1) {
+        //this->currentMenu->eastButtonPushed();
+        Serial.println("East");
+    }
+    if(digitalRead(34) == 1) {
+        //m->currentMenu->westButtonPushed();
+        Serial.println("West");
+    }
+    Serial.println(digitalRead(33));
+    /*Serial.println(digitalRead(32));
     Serial.println(digitalRead(35));
     Serial.println(digitalRead(34));
     Serial.println("=======================");

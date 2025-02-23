@@ -8,4 +8,5 @@ public:
     virtual void southButtonPushed() = 0;
     virtual void westButtonPushed() = 0;
     virtual void eastButtonPushed() = 0;
+protected:
 };
